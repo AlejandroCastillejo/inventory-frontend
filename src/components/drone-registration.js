@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import {API} from '../services/api-service';
+
 function DroneRegistration() {
 
     const [name, setName] = useState('');
@@ -10,26 +12,18 @@ function DroneRegistration() {
     const [selectedCameras, setSelectedCameras] = useState([]);
 
     const addClicked = () => {
-        name && brand &&
-        fetch("http://127.0.0.1:8000/api/drones/", {
-            method: 'POST',
-            headers: {
-                'Authorization': 'Token 4b480f02e1b4e8ae7c03600e5d19553ebc46b912',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ name: name, brand: brand, serial_number: sn, supported_cameras: selectedCameras})
-        }).then( resp => resp.json() )
+        API.useFetch(
+            "http://127.0.0.1:8000/api/drones/", 
+            'POST', 
+            '4b480f02e1b4e8ae7c03600e5d19553ebc46b912', 
+            {name, brand, serial_number: sn, supported_cameras: selectedCameras}
+        )
         .then(data => console.log(data))
         .catch( error => console.log(error))
     }
 
     useEffect( () => {
-        fetch("http://127.0.0.1:8000/api/cameras/", {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            }
-        }).then( resp => resp.json())
+        API.useFetch("http://127.0.0.1:8000/api/cameras/", 'GET')
         .then( data => setCameras(data) )
         .catch( error => console.log(error))
     }, [])
@@ -53,17 +47,17 @@ function DroneRegistration() {
                     <h2>Drone registration form</h2>
 
                     <label htmlFor="name">Drone model</label><br/>
-                    <input id="title" type="text" placeholder="name" 
+                    <input id="name" type="text" placeholder="name" required
                         onChange={ evt => setName(evt.target.value) }
                     /><br/><br/>
 
                     <label htmlFor="brand">Brand</label><br/>
-                    <input id="title" type="text" placeholder="brand" 
+                    <input id="brand" type="text" placeholder="brand" required
                         onChange={ evt => setBrand(evt.target.value) }
                     /><br/><br/>
 
                     <label htmlFor="serial_number">Serial number</label><br/>
-                    <input id="title" type="text" placeholder="serial number" 
+                    <input id="serial_number" type="text" placeholder="serial number" 
                         onChange={ evt => setSn(evt.target.value) }
                     /><br/><br/>
 
