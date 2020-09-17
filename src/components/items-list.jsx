@@ -19,11 +19,17 @@ function ItemsList({ items }) {
                             <div key={item.id} className='body-item'>
                                 <span className='item-field'>{item.brand} </span>
                                 <span className='item-field'>{item.name}</span> 
-                                <span className='item-field'>ref </span> 
-                                <span className='item-field'>units </span>
+                                {item.serial_number ? 
+                                    <span className='item-field'>{item.serial_number} </span> 
+                                    : <span className='item-field'>n/a</span> 
+                                }
+                                {item.quantity ?
+                                    <span className='item-field'>{item.quantity}</span>
+                                    : <span className='item-field'>-</span>
+                                }
                             </div>
                             {item.supported_cameras && 
-                                <span className='item-extra-field'>Suported cameras</span>
+                                <span className='item-extra-field'>Suported cameras: ...</span>
                             }
                         </div>
                     // TODO: replace 'supported_cameras' for 'extra_information'. Fisrt make changes in the backend

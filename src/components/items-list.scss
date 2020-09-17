@@ -11,7 +11,7 @@
         justify-content: space-between;
         border-bottom: 2px solid darkgrey;
         display: grid;
-        grid-template-columns: 20% 30% 30% auto;
+        grid-template-columns: 25% 30% 30% auto;
 
         .header-block {
             text-align: initial;
@@ -20,6 +20,8 @@
 
     .items-list-body {
         margin-top: 10px;
+        border-bottom: 1px solid darkgrey;
+        text-align: left;
 
         .body-item {
             width: 100%;
@@ -28,16 +30,16 @@
             display: grid;
             grid-template-columns: 20% 30% 30% auto;
             border-top: 1px solid darkgrey;
+            
             .item-field{
                 text-align: initial;
             }
         }
         .item-extra-field{
-            text-align: initial;
-            padding: 2px 20px;
+            padding: 10vw;
             font-size: small;
             font-style: italic;
-
+            opacity: 0.3;
         }
     }
 }
