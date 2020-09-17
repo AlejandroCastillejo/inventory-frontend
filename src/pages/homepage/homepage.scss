@@ -1,3 +1,7 @@
 .homepage {
-    color: red;
+    padding: 5px 0px;
+    // color: red;
+    display: grid;
+    grid-template-columns: 160px auto;
+    grid-gap: 10px;
 }

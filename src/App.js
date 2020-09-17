@@ -15,10 +15,10 @@ function App() {
           <h1>Inventory</h1>
         </header>
         <Switch>
-          {/* <Route exact path='/'>
-            <HomePage />
-          </Route> */}
           <Route exact path='/'>
+            <HomePage />
+          </Route>
+          <Route exact path='/admin'>
             <AdminPage />
           </Route>
         </Switch>
