@@ -6,7 +6,6 @@ const Button = styled.button`
     color: black;
     font-size: 20px;
     padding: 8px 60px;
-    
     // border-radius: 5px;
     // margin: 10px 0px;
     cursor: pointer;
@@ -20,7 +19,7 @@ const Button = styled.button`
         }
 `;
 
-export const ButtonToggle = styled(Button)`
+const ToggleButtonContainer = styled(Button)`
   opacity: 0.5;
   ${({ active }) =>
     active &&
@@ -29,7 +28,4 @@ export const ButtonToggle = styled(Button)`
   `}
 `;
 
-export const ButtonGroup = styled.div`
-    display: inline-grid;
-    block-size: 0;
-`;
+export default ToggleButtonContainer;

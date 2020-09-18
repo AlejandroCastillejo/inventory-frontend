@@ -1,21 +1,18 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 
 import './header.scss';
 
-import AddItem from '../add-item/add-item.component';
-
-
-const Header = ({ showAddItem }) => (
+const Header = () => (
     <div className='header'>
         <div className='title'>
             Inventory
         </div>
         <div className='options'>
-            <span className='option' onClick={() => showAddItem()}>ADD ITEM</span>
+            <span 
+                className='option' 
+                onClick={() => alert('Add a funtion to this button!')}
+            >Option button</span>
         </div>
-        {/* {showAddItem && <AddItem />} */}
-        {/* <AddItem /> */}
     </div>
 )
 

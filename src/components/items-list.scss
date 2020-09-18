@@ -1,8 +1,12 @@
 .items-list {
     width: 80%;
     min-height: 90vh;
-    margin: 20px auto 30px;
+    margin: 10px auto 30px;
     align-items: center;
+
+    &.dimmer {
+        opacity: 0.25;
+    }
 
     .items-list-header {
         font-weight: bold;

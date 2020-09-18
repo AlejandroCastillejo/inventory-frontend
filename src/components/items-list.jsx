@@ -2,9 +2,9 @@ import React from 'react';
 
 import './items-list.scss';
 
-function ItemsList({ items }) {
+function ItemsList({ items, dimmer }) {
     return (
-        <div className='items-list'>
+        <div className={`items-list ${dimmer && 'dimmer'}`}>
             <div className='items-list-header'>
                 <span className='header-block'>Brand</span>
                 <span className='header-block'>Model</span>
