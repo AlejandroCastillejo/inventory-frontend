@@ -15,8 +15,8 @@ function ItemsList({ items }) {
             <div className='items-list-body'>
                 { items && items.map ( item => {
                     return (
-                        <div>
-                            <div key={item.id} className='body-item'>
+                        <div key={item.name}>
+                            <div className='body-item'>
                                 <span className='item-field'>{item.brand} </span>
                                 <span className='item-field'>{item.name}</span> 
                                 {item.serial_number ? 

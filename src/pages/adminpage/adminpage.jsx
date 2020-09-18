@@ -2,8 +2,8 @@ import React from 'react';
 
 import './adminpage.scss';
 
-import DroneRegistration from '../../components/drone-registration';
-import CameraRegistration from '../../components/camera-registration';
+import DroneRegistration from '../../components/add-item/drone-registration';
+import CameraRegistration from '../../components/add-item/camera-registration';
 
 const AdminPage = () => (
     <div className='admin-page' >

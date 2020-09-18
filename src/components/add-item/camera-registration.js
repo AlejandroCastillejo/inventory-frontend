@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import {API} from '../services/api-service';
+import {API} from '../../services/api-service';
 
 
 function CameraRegistration() {

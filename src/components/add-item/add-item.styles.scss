@@ -1,0 +1,12 @@
+.add-item {
+    color: black;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid black;
+    background-color: white;
+    top: 100px;
+    right: 40px;
+    z-index: 1;
+}
