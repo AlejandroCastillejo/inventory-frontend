@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import {API} from '../../services/api-service';
+import {InventoryAPI} from '../../services/inventory-api-services';
 
 function DroneRegistration() {
 
@@ -12,18 +12,13 @@ function DroneRegistration() {
     const [selectedCameras, setSelectedCameras] = useState([]);
 
     const addClicked = () => {
-        API.useFetch(
-            "http://127.0.0.1:8000/api/drones/", 
-            'POST', 
-            '4b480f02e1b4e8ae7c03600e5d19553ebc46b912', 
-            {name, brand, serial_number: sn, supported_cameras: selectedCameras}
-        )
+        InventoryAPI.addNewDrone({name, brand, serial_number: sn, supported_cameras: selectedCameras})
         .then(data => console.log(data))
         .catch( error => console.log(error))
     }
 
     useEffect( () => {
-        API.useFetch("http://127.0.0.1:8000/api/cameras/", 'GET')
+        InventoryAPI.getItemsList('cameras')
         .then( data => setCameras(data) )
         .catch( error => console.log(error))
     }, [])

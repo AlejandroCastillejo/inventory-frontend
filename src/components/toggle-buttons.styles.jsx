@@ -22,6 +22,7 @@ const Button = styled.button`
 
 export const ButtonToggle = styled(Button)`
   opacity: 0.5;
+  text-transform: capitalize;
   ${({ active }) =>
     active &&
     `

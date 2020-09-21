@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import {API} from '../../services/api-service';
+import {InventoryAPI} from '../../services/inventory-api-services';
 
 
 function CameraRegistration() {
@@ -10,12 +10,13 @@ function CameraRegistration() {
     const [mp, setMp] = useState('');
 
     const addClicked = () => {
-        API.useFetch(
-            "http://127.0.0.1:8000/api/cameras/", 
-            'POST', 
-            '4b480f02e1b4e8ae7c03600e5d19553ebc46b912', 
-            {name, brand, mp_number: mp}
-        )
+        // API.useFetch(
+        //     "http://127.0.0.1:8000/api/cameras/", 
+        //     'POST', 
+        //     '4b480f02e1b4e8ae7c03600e5d19553ebc46b912', 
+        //     {name, brand, mp_number: mp}
+        // )
+        InventoryAPI.addNewCamera({name, brand, mp_number: mp})
         .then(data => console.log(data))
         .catch( error => console.log(error))
     }

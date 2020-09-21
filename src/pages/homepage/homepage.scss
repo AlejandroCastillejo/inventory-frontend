@@ -10,17 +10,16 @@
         height: 100%;
         margin: 0 auto;
         display: flex;
-        // align-items: center;
-        // text-align: left;
         justify-content: space-between;
     
         .body-button {
           padding: 6px 10px;
+          margin: 15px 0;
           border: 2px solid grey;
           border-radius: 5px;
           text-decoration: none;
         //   color: white;
-          font-size: smaller;
+          font-size: small;
           cursor: pointer;
     
           &:hover{
