@@ -7,7 +7,23 @@
     border: 2px double black;
     border-radius: 5px;
     background-color: white;
-    top: 150px;
+    top: 110px;
     right: 40px;
     z-index: 1;
+
+    .close-button{
+        background-color: rgb(206, 206, 206);
+        border: inherit;
+        border-radius: 40px;
+        padding: 3px;
+        align-self: right;
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+
+        &:hover {
+            color: grey;
+            background-color: white;
+        }
+    }
 }

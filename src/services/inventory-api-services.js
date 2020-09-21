@@ -18,4 +18,8 @@ export class InventoryAPI {
     static addNewCamera(body) {
         return useFetch(URL + 'cameras/', 'POST', TOKEN, body);
     };
+
+    static addNewItem(item, body) {
+        return useFetch(URL + item, 'POST', TOKEN, body);
+    };
 }

@@ -45,7 +45,9 @@ function HomePage() {
                 </div>
                 <ItemsList items={itemsToList} dimmer={showAddItem}/>
             </div>
-            {showAddItem && <AddItem />}
+            {showAddItem && 
+                <AddItem items={selectedTag} closeForm={() => switchShowAddItem()}/>
+            }
 
         </div>
     )
