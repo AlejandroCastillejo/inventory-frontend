@@ -17,9 +17,14 @@
         display: grid;
         grid-template-columns: 25% 30% 30% auto;
 
+        &.delete-mode {
+            grid-template-columns: 5% 25% 30% 30% auto;
+        }
+
         .header-block {
             text-align: initial;
         }
+        
     }
 
     .items-list-body {
@@ -34,6 +39,10 @@
             display: grid;
             grid-template-columns: 20% 30% 30% auto;
             border-top: 1px solid darkgrey;
+
+            &.delete-mode {
+                grid-template-columns: 5% 25% 30% 30% auto;
+            }
             
             .item-field{
                 text-align: initial;
@@ -45,5 +54,9 @@
             font-style: italic;
             opacity: 0.3;
         }
+    }
+    .checkbox{
+        z-index: 1;
+        cursor: pointer;
     }
 }
