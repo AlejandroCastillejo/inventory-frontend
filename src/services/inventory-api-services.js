@@ -8,18 +8,25 @@ const TOKEN = '4b480f02e1b4e8ae7c03600e5d19553ebc46b912';
 export class InventoryAPI {
     
     static getItemsList(items) {
-        return useFetch(URL + items, 'GET');
+        return useFetch(URL + items, 'GET')
+            .then(resp => resp.json());
     };
 
     static addNewDrone(body) {
-        return useFetch(URL + 'drones/', 'POST', TOKEN, body);
+        return useFetch(URL + 'drones/', 'POST', TOKEN, body)
+        .then(resp => resp.json());
     };
 
     static addNewCamera(body) {
-        return useFetch(URL + 'cameras/', 'POST', TOKEN, body);
+        return useFetch(URL + 'cameras/', 'POST', TOKEN, body)
+        .then(resp => resp.json());
     };
 
-    static addNewItem(item, body) {
-        return useFetch(URL + item, 'POST', TOKEN, body);
+    static addNewItem(items, body) {
+        return useFetch(URL + items, 'POST', TOKEN, body);
     };
+
+    static async deleteItem(items, id) {
+        return await useFetch(URL + items + '/' + id, 'DELETE', TOKEN);
+    }
 }

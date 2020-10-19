@@ -7,7 +7,8 @@ const useFetch =(url, method, token=null, body=null) => (
             ...(token && {'Authorization': `Token ${token}`})
         },
         ...(body && {body: JSON.stringify(body)} )
-    }).then(resp => resp.json())
+    })
+    // }).then(resp => resp.json())
 )
 
 export default useFetch;

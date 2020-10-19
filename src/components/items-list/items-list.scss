@@ -1,62 +1,79 @@
 .items-list {
-    width: 80%;
-    min-height: 90vh;
-    margin: 0 auto 30px;
-    align-items: center;
+  width: 80%;
+  min-height: 90vh;
+  margin: 0 auto 30px;
+  align-items: center;
 
-    &.dimmer {
-        opacity: 0.25;
+  &.dimmer {
+    opacity: 0.25;
+  }
+
+  .items-list-header {
+    font-weight: bold;
+    width: 100%;
+    padding: 10px 0;
+    justify-content: space-between;
+    border-bottom: 2px solid darkgrey;
+    display: grid;
+    grid-template-columns: 25% 30% 30% auto;
+
+    &.delete-mode {
+      grid-template-columns: 5% 25% 30% 30% auto;
     }
 
-    .items-list-header {
-        font-weight: bold;
-        width: 100%;
-        padding: 10px 0;
-        justify-content: space-between;
-        border-bottom: 2px solid darkgrey;
-        display: grid;
-        grid-template-columns: 25% 30% 30% auto;
-
-        &.delete-mode {
-            grid-template-columns: 5% 25% 30% 30% auto;
-        }
-
-        .header-block {
-            text-align: initial;
-        }
-        
+    .header-block {
+      text-align: initial;
     }
+  }
 
-    .items-list-body {
-        margin-top: 10px;
-        border-bottom: 1px solid darkgrey;
-        text-align: left;
+  .items-list-body {
+    margin-top: 10px;
+    border-bottom: 1px solid darkgrey;
+    text-align: left;
 
-        .body-item {
-            width: 100%;
-            padding: 10px 0;
-            justify-content: space-between;
-            display: grid;
-            grid-template-columns: 20% 30% 30% auto;
-            border-top: 1px solid darkgrey;
+    .body-item {
+      width: 100%;
+      padding: 10px 0;
+      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 20% 30% 30% auto;
+      border-top: 1px solid darkgrey;
 
-            &.delete-mode {
-                grid-template-columns: 5% 25% 30% 30% auto;
-            }
-            
-            .item-field{
-                text-align: initial;
-            }
-        }
-        .item-extra-field{
-            padding: 10vw;
-            font-size: small;
-            font-style: italic;
-            opacity: 0.3;
-        }
+      &.delete-mode {
+        grid-template-columns: 5% 25% 30% 30% auto;
+      }
+
+      .item-field {
+        text-align: initial;
+      }
     }
-    .checkbox{
-        z-index: 1;
-        cursor: pointer;
+    .item-extra-field {
+      padding: 10vw;
+      font-size: small;
+      font-style: italic;
+      opacity: 0.3;
     }
+  }
+  .checkbox {
+    z-index: 1;
+    cursor: pointer;
+  }
+}
+
+.button {
+  z-index: 1;
+  color: rgb(70, 70, 70);
+  padding: 6px 10px;
+  margin: 15px 0;
+  border: 2px solid grey;
+  border-radius: 5px;
+  text-decoration: none;
+  //   color: white;
+  font-size: small;
+  cursor: pointer;
+
+  &:hover {
+    background-color: white;
+    color: grey;
+  }
 }

@@ -50,6 +50,7 @@ function CameraRegistration({ updateList }) {
         id="title"
         type="text"
         placeholder="mp number"
+        required
         onChange={(evt) => setMp(evt.target.value)}
       />
       <br />
