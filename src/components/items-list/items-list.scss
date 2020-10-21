@@ -1,8 +1,13 @@
 .items-list {
   width: 80%;
-  min-height: 90vh;
+  // min-height: 100vh;
   margin: 0 auto 30px;
-  align-items: center;
+  padding: 20px 20px;
+  // align-items: center;
+  background-color: rgb(247, 247, 247);
+  display: grid;
+
+  grid-template-rows: 40px calc(100vh - 320px);
 
   &.dimmer {
     opacity: 0.25;
@@ -15,10 +20,12 @@
     justify-content: space-between;
     border-bottom: 2px solid darkgrey;
     display: grid;
-    grid-template-columns: 25% 30% 30% auto;
+    grid-template-columns: repeat(3, 3fr) 1fr 20px;
+    // grid-template-columns: 25% 30% 30% auto;
 
     &.delete-mode {
-      grid-template-columns: 5% 25% 30% 30% auto;
+      grid-template-columns: 30px repeat(3, 3fr) 1fr 20px;
+      // grid-template-columns: 30px 25% 30% 30% auto;
     }
 
     .header-block {
@@ -29,18 +36,20 @@
   .items-list-body {
     margin-top: 10px;
     border-bottom: 1px solid darkgrey;
-    text-align: left;
+    // text-align: left;
+    overflow-y: scroll;
 
     .body-item {
       width: 100%;
       padding: 10px 0;
-      justify-content: space-between;
+      // justify-content: space-between;
       display: grid;
-      grid-template-columns: 20% 30% 30% auto;
+      grid-template-columns: repeat(3, 3fr) 1fr;
       border-top: 1px solid darkgrey;
 
       &.delete-mode {
-        grid-template-columns: 5% 25% 30% 30% auto;
+        grid-template-columns: 30px repeat(3, 3fr) 1fr;
+        // grid-template-columns: 30px 25% 30% 30% auto;
       }
 
       .item-field {
@@ -60,13 +69,14 @@
   }
 }
 
-.button {
+.delete-button {
   z-index: 1;
   color: rgb(70, 70, 70);
   padding: 6px 10px;
   margin: 15px 0;
   border: 2px solid grey;
   border-radius: 5px;
+  justify-self: center;
   text-decoration: none;
   //   color: white;
   font-size: small;

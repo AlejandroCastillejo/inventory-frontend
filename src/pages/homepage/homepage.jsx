@@ -51,7 +51,7 @@ function HomePage() {
         tags={menuTags}
         selectedTag={(selected) => setSelectedTag(selected)}
       />
-      <div>
+      <div className="body">
         <div className="body-buttons">
           <button
             className="body-button"

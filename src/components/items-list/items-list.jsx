@@ -118,7 +118,7 @@ function ItemsList({ items, itemsGroup, dimmer, updateList, deleteMode }) {
           })}
       </div>
       {deleteMode && (
-        <button className="button" onClick={deleteSelected}>
+        <button className="delete-button" onClick={deleteSelected}>
           DELETE SELECTED ITEMS
         </button>
       )}
