@@ -8,6 +8,7 @@
   display: grid;
 
   grid-template-rows: 40px calc(100vh - 320px);
+  box-shadow: 2px 2px 5px rgba(128, 128, 128, 0.39);
 
   &.dimmer {
     opacity: 0.25;
@@ -54,6 +55,9 @@
 
       .item-field {
         text-align: initial;
+        overflow: hidden;
+        margin-right: 25px;
+        z-index: 1;
       }
     }
     .item-extra-field {

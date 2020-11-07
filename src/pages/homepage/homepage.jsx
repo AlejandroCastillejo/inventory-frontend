@@ -4,7 +4,10 @@ import { InventoryAPI } from "../../services/inventory-api-services";
 
 import "./homepage.scss";
 
-import ToggleButtons from "../../components/toggle-buttons/toggle-buttons";
+// import MenuOptions from "../../components/menu-options/menu-options";
+import SideMenu from "../../components/side-menu/side-menu";
+import SmallMenu from "../../components/small-menu/small-menu";
+
 import ItemsList from "../../components/items-list/items-list";
 import AddItem from "../../components/add-item/add-item.component";
 
@@ -47,12 +50,19 @@ function HomePage() {
   // debugger
   return (
     <div className="homepage">
-      <ToggleButtons
-        tags={menuTags}
-        selectedTag={(selected) => setSelectedTag(selected)}
-      />
+      <div className="side-menu">
+        <SideMenu
+          tags={menuTags}
+          selectedTag={(selected) => setSelectedTag(selected)}
+        />
+      </div>
+
       <div className="body">
         <div className="body-buttons">
+          <SmallMenu
+            tags={menuTags}
+            selectedTag={(selected) => setSelectedTag(selected)}
+          />
           <button
             className="body-button"
             onClick={() => {

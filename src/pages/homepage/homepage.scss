@@ -1,14 +1,17 @@
 .homepage {
-  padding: 5px 0px;
+  padding: 5px 10px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 150px 1fr;
+  grid-template-columns: minmax(150px, 200px) auto;
   // grid-template-rows: 60px auto;
-  grid-gap: 10px;
+  // grid-gap: 10px;
+  justify-items: auto;
 
   .body {
     display: grid;
     grid-template-rows: 60px auto;
+    justify-self: auto;
+    min-width: 550px;
 
     .body-buttons {
       width: 80%;
@@ -25,8 +28,7 @@
         margin: 15px 0;
         border: 2px solid grey;
         border-radius: 5px;
-        text-decoration: none;
-        //   color: white;
+        // align-self: center;
         font-size: small;
         cursor: pointer;
 
@@ -35,6 +37,20 @@
           color: grey;
         }
       }
+    }
+  }
+
+  .side-menu {
+    justify-self: auto;
+  }
+
+  @media screen and (max-width: 800px) {
+    grid-template-columns: 1fr;
+    .side-menu {
+      display: none;
+    }
+    .small-menu {
+      display: block;
     }
   }
 }

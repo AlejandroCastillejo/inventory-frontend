@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { useCallback } from "react";
 
-import { ButtonGroup, ButtonToggle } from "./toggle-buttons.styles";
+import {
+  ButtonGroupContainer,
+  ButtonToggleContainer,
+} from "./menu-options.styles";
 
-function ToggleButtons({ tags, selectedTag }) {
+function MenuOptions({ tags, selectedTag, handlerToggle }) {
   const [active, setActive] = useState(tags[0]);
 
   useEffect(() => {
@@ -10,18 +14,19 @@ function ToggleButtons({ tags, selectedTag }) {
   }, [selectedTag, active]);
 
   return (
-    <ButtonGroup>
+    <ButtonGroupContainer>
       {tags.map((tag) => (
-        <ButtonToggle
+        <ButtonToggleContainer
           key={tag}
+          nav={tag}
           active={active === tag}
           onClick={() => setActive(tag)}
         >
           {tag}
-        </ButtonToggle>
+        </ButtonToggleContainer>
       ))}
-    </ButtonGroup>
+    </ButtonGroupContainer>
   );
 }
 
-export default ToggleButtons;
+export default MenuOptions;
