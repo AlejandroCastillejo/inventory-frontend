@@ -8,13 +8,14 @@ import { useCallback } from "react";
 function SmallMenu({ tags, selectedTag }) {
   const [toggleMenu, setToggleMenu] = useState(false);
 
-  const handlerToggle = () => {
+  const handlerToggle = useCallback(() => {
     setToggleMenu(!toggleMenu);
     console.log("toggleMenu");
-  };
+  }, [toggleMenu]);
 
   return (
     <div className="small-menu">
+      {console.log("render small-menu")}
       <button className="small-menu-button" onClick={handlerToggle}>
         &#9776;
       </button>

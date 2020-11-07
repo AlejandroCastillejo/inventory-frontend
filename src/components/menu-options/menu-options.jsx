@@ -20,7 +20,10 @@ function MenuOptions({ tags, selectedTag, handlerToggle }) {
           key={tag}
           nav={tag}
           active={active === tag}
-          onClick={() => setActive(tag)}
+          onClick={() => {
+            setActive(tag);
+            setTimeout(() => handlerToggle(), 100);
+          }}
         >
           {tag}
         </ButtonToggleContainer>
