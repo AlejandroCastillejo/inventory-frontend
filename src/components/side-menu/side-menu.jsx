@@ -2,8 +2,10 @@ import React from "react";
 
 import MenuOptions from "../menu-options/menu-options";
 
-const SideMenu = ({ tags, selectedTag }) => {
-  return <MenuOptions tags={tags} selectedTag={selectedTag} />;
+const SideMenu = () => {
+  console.log("render side-menu");
+
+  return <MenuOptions />;
 };
 
 export default SideMenu;

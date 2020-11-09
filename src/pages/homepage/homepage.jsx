@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useContext } from "react";
 
 import { InventoryAPI } from "../../services/inventory-api-services";
 
+import { MenuContext } from "../../context/menu-context";
+
 import "./homepage.scss";
 
-// import MenuOptions from "../../components/menu-options/menu-options";
 import SideMenu from "../../components/side-menu/side-menu";
 import SmallMenu from "../../components/small-menu/small-menu";
 
@@ -15,8 +16,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 function HomePage() {
-  const menuTags = ["drones", "cameras", "gimbals", "batteries"];
-  const [selectedTag, setSelectedTag] = useState(null);
+  const { selectedTag } = useContext(MenuContext);
+
   const [itemsToList, setItemsToList] = useState([]);
 
   const [showAddItem, setShowAddItem] = useState(false);
@@ -51,18 +52,12 @@ function HomePage() {
   return (
     <div className="homepage">
       <div className="side-menu">
-        <SideMenu
-          tags={menuTags}
-          selectedTag={(selected) => setSelectedTag(selected)}
-        />
+        <SideMenu />
       </div>
 
       <div className="body">
         <div className="body-buttons">
-          <SmallMenu
-            tags={menuTags}
-            selectedTag={(selected) => setSelectedTag(selected)}
-          />
+          <SmallMenu />
           <button
             className="body-button"
             onClick={() => {

@@ -5,7 +5,7 @@ import "./small-menu.scss";
 import MenuOptions from "../menu-options/menu-options";
 import { useCallback } from "react";
 
-function SmallMenu({ tags, selectedTag }) {
+function SmallMenu({ tags, selectedTag, setSelectedTag }) {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   const handlerToggle = useCallback(() => {
@@ -23,8 +23,6 @@ function SmallMenu({ tags, selectedTag }) {
       {toggleMenu && (
         <MenuOptions
           className="small-menu-options"
-          tags={tags}
-          selectedTag={selectedTag}
           handlerToggle={handlerToggle}
         />
       )}

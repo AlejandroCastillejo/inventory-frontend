@@ -1,28 +1,25 @@
-import React, { useEffect, useState } from "react";
-import { useCallback } from "react";
+import React, { useContext } from "react";
+
+import { MenuContext } from "../../context/menu-context";
 
 import {
   ButtonGroupContainer,
   ButtonToggleContainer,
 } from "./menu-options.styles";
 
-function MenuOptions({ tags, selectedTag, handlerToggle }) {
-  const [active, setActive] = useState(tags[0]);
-
-  useEffect(() => {
-    selectedTag(active);
-  }, [selectedTag, active]);
+function MenuOptions({ handlerToggle }) {
+  const { menuTags, selectedTag, setSelectedTag } = useContext(MenuContext);
 
   return (
     <ButtonGroupContainer>
-      {tags.map((tag) => (
+      {menuTags.map((tag) => (
         <ButtonToggleContainer
           key={tag}
           nav={tag}
-          active={active === tag}
+          active={selectedTag === tag}
           onClick={() => {
-            setActive(tag);
-            setTimeout(() => handlerToggle(), 100);
+            setSelectedTag(tag);
+            handlerToggle && setTimeout(() => handlerToggle(), 200);
           }}
         >
           {tag}
